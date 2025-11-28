@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="logo.png">
+    <title>Spotify</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="PROJECT_LAST_CSS-spotify..css">
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <div id="splash-logo" class="splash-element"></div>
+        <div id="splash-text" class="splash-element">Spotify</div>
+    </div>
+    <div class="main">
+        <div class="sidebar">
+            <div class="logo-container">
+                <i class="fa-brands fa-spotify logo-icon"></i>
+                <span class="logo-text">Spotify</span>
+            </div>
+            <div class="nav">
+                <div class="nav-option active">
+                    <i class="fa-solid fa-house"></i>
+                    <a href="#">Home</a>
+                </div>
+                <div class="nav-option">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <a href="#">Search</a>
+                </div>
+            </div>
+            <div class="library">
+                <div class="options">
+                    <div class="lib-option nav-option">
+                        <img src="library_icon.png" alt="library">
+                        <a href="#">Your Library</a>
+                    </div>
+                    <div class="icons">
+                        <i class="fa-solid fa-plus" id="createPlaylistIcon"></i>
+                        <i class="fa-solid fa-arrow-right" id="nextPageIcon"></i>
+                        <i class="fa-solid fa-arrow-left hide" id="prevPageIcon"></i>
+                    </div>
+                </div>
+                <div class="lib-box">
+                    <div class="box">
+                        <p class="box-p1">Create your first playlist</p>
+                        <p class="box-p2">It's easy, we'll help you</p>
+                        <button class="badge" id="createPlaylistBtn">Create playlist</button>
+                    </div>
+                    <div class="box">
+                        <p class="box-p1">Find some podcasts to follow</p>
+                        <p class="box-p2">Keep you updated on new episodes</p>
+                        <button class="badge" id="browsePodcastsBtn">Browse podcasts</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content" id="main-content-view">
+            <div class="sticky-nav">
+                <div class="sticky-nav-icons">
+                    <div class="quick-search-container">
+                        <input type="text" class="quick-search-bar" id="quickSearchBar" placeholder="Quick Search for a Song..." autocomplete="off">
+                    </div>
+                </div>
+                <div class="sticky-nav-options">
+                    <div class="greeting-message" id="greetingMessage" style="display: none;">
+                        <span class="greeting-text">Hola, <span id="userDisplayName"></span>!</span>
+                    </div>
+                    <div class="profile-dropdown-container">
+                        <div class="user-profile" id="userProfileBtn">
+                            <i class="fa-solid fa-user nav-item"></i>
+                            <span class="user-name hide">Profile</span>
+                        </div>
+                        <div class="settings-dropdown" id="settingsDropdown">
+                            <a href="#" class="dropdown-item" id="accountLink">
+                                <i class="fa-solid fa-user"></i> Account
+                            </a>
+                            <a href="#" class="dropdown-item" id="settingsLink">
+                                <i class="fa-solid fa-gear"></i> Settings
+                            </a>
+                            <a href="#" class="dropdown-item" id="themeToggleLink">
+                                <i class="fa-solid fa-moon" id="theme-icon"></i> <span id="theme-text">Light Theme</span>
+                            </a>
+                            <a href="#" class="dropdown-item" id="logoutLink">
+                                <i class="fa-solid fa-right-from-bracket"></i> Log out
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title" id="main-title">Recently Played</h2>
+            <div class="cards-container" id="content-container">
+                <div class="card">
+                    <div class="card-image-wrapper">
+                    <img src="card1img.jpeg" alt="top_50">
+                        <div class="play-button-overlay">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                        <button class="badge card-badge">New</button>
+                    </div>
+                    <p class="card-title">Top 50 - Global</p>
+                    <p class="card-info">Your daily updates of the most played tracks right now</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">Trending now near you</h2>
+            <div class="cards-container">
+                <div class="card" data-track="Barso Re">
+                    <div class="card-image-wrapper">
+                    <img src="barso re.jpg" alt="Barso Re">
+                        <div class="play-button-overlay">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                        <button class="badge card-badge">Trending</button>
+                    </div>
+                    <p class="card-title">Barso Re</p>
+                    <p class="card-info">Shreya Ghoshal</p>
+                </div>
+                <div class="card" data-track="Yeh Raaten Yeh Mausam">
+                    <div class="card-image-wrapper">
+                    <img src="yeh raten yeh mausam.jpg" alt="Yeh Raaten Yeh Mausam">
+                        <div class="play-button-overlay">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                        <button class="badge card-badge">Popular</button>
+                    </div>
+                    <p class="card-title">Yeh Raaten Yeh Mausam</p>
+                    <p class="card-info">Sanam ft. Simran</p>
+                </div>
+                <div class="card" data-track="Wavy">
+                    <div class="card-image-wrapper">
+                    <img src="wavy.jpg" alt="Wavy">
+                        <div class="play-button-overlay">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                        <button class="badge card-badge">Hot</button>
+                    </div>
+                    <p class="card-title">Wavy</p>
+                    <p class="card-info">Karan Aujla</p>
+                </div>
+                <div class="card" data-track="Illegal Weapon 2.0">
+                    <div class="card-image-wrapper">
+                    <img src="illegal weapon 2.O.jpg" alt="Illegal Weapon 2.0">
+                        <div class="play-button-overlay">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                        <button class="badge card-badge">New</button>
+                    </div>
+                    <p class="card-title">Illegal Weapon 2.0</p>
+                    <p class="card-info">Jasmine Sandlas & Garry Sandhu</p>
+                </div>
+                <div class="card" data-track="Naah">
+                    <div class="card-image-wrapper">
+                    <img src="naah.jpeg" alt="Naah">
+                        <div class="play-button-overlay">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                        <button class="badge card-badge">Top</button>
+                    </div>
+                    <p class="card-title">Naah</p>
+                    <p class="card-info">Harrdy Sandhu</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">Featured Charts</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-image-wrapper">
+                    <img src="card5img.jpeg" alt="top_50">
+                        <div class="play-button-overlay">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                        <button class="badge card-badge">Featured</button>
+                    </div>
+                    <p class="card-title">Top 50 - Global</p>
+                    <p class="card-info">Your daily updates of the most played tracks right now</p>
+                </div>
+                <div class="card">
+                    <div class="card-image-wrapper">
+                    <img src="card6img.jpeg" alt="top_50">
+                        <div class="play-button-overlay">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                        <button class="badge card-badge">Chart</button>
+                    </div>
+                    <p class="card-title">Top 50 - Global</p>
+                    <p class="card-info">Your daily updates of the most played tracks right now</p>
+                </div>
+                <div class="card">
+                    <div class="card-image-wrapper">
+                    <img src="card1img.jpeg" alt="top_50">
+                        <div class="play-button-overlay">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                        <button class="badge card-badge">Hit</button>
+                    </div>
+                    <p class="card-title">Top 50 - Global</p>
+                    <p class="card-info">Your daily updates of the most played tracks right now</p>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="line">
+                </div>
+            </div>
+        </div>
+
+        <div class="music-player">
+            <div class="album">
+                <img src="card3img.jpeg" alt="music">
+                <div class="album-info">
+                <span class="high">Mere Paas Tum Ho</span>
+                    <span class="high1">Rahat Fateh Ali Khan</span>
+                </div>
+                <i class="fa-regular fa-heart"></i>
+            </div>
+            <div class="player">
+                <div class="player-controls">
+                    <button class="player-btn" id="shuffleBtn" aria-label="Shuffle"><i class="fa-solid fa-shuffle"></i></button>
+                    <button class="player-btn" id="prevBtn" aria-label="Previous track"><i class="fa-solid fa-backward-step"></i></button>
+                    <button class="player-btn play-pause-btn" id="playPauseBtn" aria-label="Play/Pause"><i class="fa-solid fa-play"></i></button>
+                    <button class="player-btn" id="nextBtn" aria-label="Next track"><i class="fa-solid fa-forward-step"></i></button>
+                    <button class="player-btn" id="repeatBtn" aria-label="Repeat"><i class="fa-solid fa-repeat"></i></button>
+                </div>
+                <div class="playback-bar">
+                    <span class="curr-time">0:00</span>
+                    <input type="range" min="0" max="100" value="0" class="progress-bar" id="progressBar" step="0.1" aria-label="Progress" title="Progress">
+                    <span class="tot-time">3:33</span>
+                </div>
+            </div>
+            <div class="controls">
+                <button class="control-btn" id="queueBtn" aria-label="Queue"><i class="fa-solid fa-list"></i></button>
+                <button class="control-btn" id="deviceBtn" aria-label="Devices"><i class="fa-solid fa-computer"></i></button>
+                <button class="control-btn" id="volumeBtn" aria-label="Volume"><i class="fa-solid fa-volume-high"></i></button>
+                <input type="range" min="0" max="100" value="50" class="volume-bar" id="volumeBar" step="1" aria-label="Volume" title="Volume">
+            </div>
+        </div>
+    </div>
+    <!-- Audio Element -->
+    <audio id="audioPlayer" preload="metadata">
+        <source src="" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script src="script.js"></script>
+</body>
+</html>
